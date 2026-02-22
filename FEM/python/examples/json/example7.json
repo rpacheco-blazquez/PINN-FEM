@@ -1,0 +1,116 @@
+{
+    "description": "Example 7: Hybrid Solver WITHOUT Preconditioning with ALL NN Properties - Young, Area, Density as Neural Networks",
+    "nodes": [
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "fixed_x": true,
+            "fixed_y": true
+        },
+        {
+            "x": 1.0,
+            "y": 0.0,
+            "fixed_x": false,
+            "fixed_y": true
+        },
+        {
+            "x": 2.0,
+            "y": 0.0,
+            "fixed_x": false,
+            "fixed_y": true
+        },
+        {
+            "x": 3.0,
+            "y": 0.0,
+            "fixed_x": false,
+            "fixed_y": true
+        }
+    ],
+    "elements": [
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            2
+        ],
+        [
+            2,
+            3
+        ]
+    ],
+    "loads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+    ],
+    "incremental_loading": {
+        "n_increments": 10,
+        "initial": 0.0,
+        "final": 1.0,
+        "comment": "Universal incremental loading: 10 steps from 0% to 100% load"
+    },
+    "material": {
+        "young": 1.0,
+        "area": 1.0,
+        "density": 1.0
+    },
+    "measured_displacements": {
+        "nodes": [
+            1,
+            2,
+            3
+        ],
+        "ux": [
+            1.0,
+            2.0,
+            3.0
+        ],
+        "uy": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "comment": "Target displacements for learning 3 material properties simultaneously"
+    },
+    "nn_config": {
+        "young": {
+            "enabled": true,
+            "hidden_layers": 2,
+            "neurons_per_layer": 20,
+            "input_dim": 3,
+            "comment": "input_dim=3 for 2D spatial (x,y) + load_factor"
+        },
+        "area": {
+            "enabled": true,
+            "hidden_layers": 2,
+            "neurons_per_layer": 15,
+            "input_dim": 3
+        },
+        "density": {
+            "enabled": true,
+            "hidden_layers": 2,
+            "neurons_per_layer": 10,
+            "input_dim": 3
+        }
+    },
+    "pinn_config": {
+        "max_iterations": 5000,
+        "tolerance": 1e-6,
+        "learning_rate_u": 0.01,
+        "learning_rate_theta": 0.0005,
+        "alpha_physics": 1.0,
+        "alpha_data": 100.0,
+        "print_every": 100,
+        "preconditioning": false,
+        "comment": "preconditioning=false: Test hybrid solver without preconditioning on most complex case (3 NNs)"
+    },
+    "solver_type": "pinn-hybrid",
+    "comment": "Most complex case: 3 Neural Networks (E,A,density) with hybrid solver without preconditioning. Compare with Example 7-P."
+}

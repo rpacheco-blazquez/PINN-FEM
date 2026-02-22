@@ -1,0 +1,27 @@
+{
+  "name": "pinn-fem-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js para ejecutar solvers FEM/PINN en Python",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "fem",
+    "pinn",
+    "physics",
+    "neural-network"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

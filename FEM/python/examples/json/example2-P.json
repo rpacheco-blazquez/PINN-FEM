@@ -1,0 +1,51 @@
+{
+  "description": "Example 2-P: Pure GD Solver WITH Preconditioning - Same as Example 2 but with GD preconditioning phase",
+  "nodes": [
+    {"x": 0.0, "y": 0.0, "fixed_x": true, "fixed_y": true},
+    {"x": 1.0, "y": 0.0, "fixed_x": false, "fixed_y": true},
+    {"x": 2.0, "y": 0.0, "fixed_x": false, "fixed_y": true},
+    {"x": 3.0, "y": 0.0, "fixed_x": false, "fixed_y": true}
+  ],
+  "elements": [
+    [0, 1],
+    [1, 2],
+    [2, 3]
+  ],
+  "loads": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+  "incremental_loading": {
+    "n_increments": 10,
+    "initial": 0.0,
+    "final": 1.0,
+    "comment": "Universal incremental loading: 10 steps from 0% to 100% load"
+  },
+  "material": {
+    "young": 1.0,
+    "area": 1.0,
+    "density": 1.0
+  },
+  "nn_config": {
+    "young": {
+      "enabled": false,
+      "comment": "No NN - scalar material properties only"
+    },
+    "area": {
+      "enabled": false
+    },
+    "density": {
+      "enabled": false
+    }
+  },
+  "pinn_config": {
+    "max_iterations": 10000,
+    "tolerance": 1e-6,
+    "learning_rate_u": 0.01,
+    "learning_rate_theta": 0.001,
+    "alpha_physics": 1.0,
+    "alpha_data": 0.0,
+    "print_every": 10,
+    "preconditioning": true,
+    "comment": "preconditioning=true: Use GD preconditioning before main GD solve (test if helps convergence)"
+  },
+  "solver_type": "pinn-gd",
+  "comment": "Pure GD solver with preconditioning enabled. Compare with Example 2 (no preconditioning) to see if preconditioning helps GD convergence."
+}

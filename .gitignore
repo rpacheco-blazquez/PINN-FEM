@@ -1,0 +1,110 @@
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Environment files ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Node / Vite / React ---
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+*.tsbuildinfo
+vite.config.ts.timestamp-*
+
+# Vite output
+/dist/
+
+# --- Misc caches ---
+.cache/
+.temp/
+tmp/
+
+# --- Matlab (exclude all) ---
+*.m
+*.mat
+*.fig
+*.slx
+*.mlx
+*.mlapp
+*.mltbx
+*.mlappinstall
+*.mex*
+*.asv
+*.autosave
+/matlab/
+/MATLAB/
+/Matlab/
+
+# --- Python results & outputs ---
+*.res.json
+*.out
+*.dump
+*.pkl
+*.pickle
+FEM/python/examples/json/*.res.json
+FEM/python/examples/json/*.log
+
+# --- Frontend/Backend data (exclude user data, keep source) ---
+frontend/dist/
+frontend/build/
+backend/uploads/
+backend/data/
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+*.db-journal
+
+# --- Large data files ---
+*.dat
+*.csv
+*.hdf5
+*.h5
+data/
+datasets/

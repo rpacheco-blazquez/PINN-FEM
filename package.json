@@ -1,0 +1,28 @@
+{
+  "name": "pinn-fem",
+  "version": "1.0.0",
+  "description": "Physics-Informed Neural Networks + Finite Element Method",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others --names \"BACKEND,FRONTEND\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm run dev --prefix frontend",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend"
+  },
+  "keywords": [
+    "FEM",
+    "PINN",
+    "finite-element-method",
+    "physics-informed-neural-networks",
+    "pytorch",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,85 @@
+{
+    "description": "Example 1: Pure FEM - Classical solution with fixed properties",
+    "nodes": [
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "fixed_x": true,
+            "fixed_y": true
+        },
+        {
+            "x": 1.0,
+            "y": 0.0,
+            "fixed_x": false,
+            "fixed_y": true
+        },
+        {
+            "x": 2.0,
+            "y": 0.0,
+            "fixed_x": false,
+            "fixed_y": true
+        },
+        {
+            "x": 3.0,
+            "y": 0.0,
+            "fixed_x": false,
+            "fixed_y": true
+        }
+    ],
+    "elements": [
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            2
+        ],
+        [
+            2,
+            3
+        ]
+    ],
+    "material": {
+        "young": 1.0,
+        "area": 1.0,
+        "density": 1.0
+    },
+    "loads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+    ],
+    "incremental_loading": {
+        "n_increments": 10,
+        "initial": 0.0,
+        "final": 1.0
+    },
+    "nn_config": {
+        "young": {
+            "enabled": false,
+            "hidden_layers": 2,
+            "neurons_per_layer": 10
+        },
+        "area": {
+            "enabled": false,
+            "hidden_layers": 2,
+            "neurons_per_layer": 10
+        },
+        "density": {
+            "enabled": false,
+            "hidden_layers": 2,
+            "neurons_per_layer": 10
+        }
+    },
+    "solver_type": "fem",
+    "solver_config": {
+        "max_iterations": 50,
+        "tolerance": 1e-6
+    }
+}

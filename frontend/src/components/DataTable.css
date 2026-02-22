@@ -1,0 +1,270 @@
+.data-table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.table-tabs {
+  display: flex;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #3a3a3a;
+  flex-shrink: 0;
+}
+
+.table-tabs button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.table-tabs button:hover {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.table-tabs button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  font-weight: 600;
+}
+
+.table-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background-color: #2a2a2a;
+}
+
+.data-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #1a1a1a;
+  z-index: 1;
+}
+
+.data-table th {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  color: #667eea;
+  font-weight: 600;
+  border-bottom: 2px solid #3a3a3a;
+}
+
+.data-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #3a3a3a;
+  color: #e0e0e0;
+}
+
+.data-table tr:hover {
+  background-color: #333;
+}
+
+.data-table input[type="number"],
+.data-table input[type="text"] {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid #4a4a4a;
+  border-radius: 3px;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+}
+
+.data-table input[type="number"]:focus,
+.data-table input[type="text"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.data-table input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  padding: 0.25rem 0.5rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #ff6666;
+  transform: scale(1.05);
+}
+
+.add-row-btn {
+  padding: 0.5rem 1rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.add-row-btn:hover:not(:disabled) {
+  background-color: #7a8ef0;
+  transform: translateY(-1px);
+}
+
+.add-row-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Scrollbar styling */
+.table-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-content::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.table-content::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+.table-content::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+/* NN Configuration Section */
+.nn-config-section {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #3a3a3a;
+  margin-bottom: 1rem;
+}
+
+.nn-config-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+.nn-config-section .help-text {
+  margin: 0 0 1rem 0;
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+.nn-property-config {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nn-property-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  border: 1px solid #3a3a3a;
+}
+
+.nn-property-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nn-property-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.nn-property-checkbox label {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nn-architecture {
+  display: flex;
+  gap: 1rem;
+  margin-left: 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid #667eea;
+}
+
+.nn-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nn-input-group label {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.nn-input-group input {
+  padding: 0.3rem 0.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid #4a4a4a;
+  border-radius: 3px;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  width: 80px;
+}
+
+.nn-input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.nn-input-group input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #3a3a3a;
+  margin: 1rem 0;
+}
+
+.measurements-section h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
